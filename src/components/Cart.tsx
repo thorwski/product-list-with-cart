@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { CartItem } from "../pages/Desserts/Interface";
 import RemoveIcon from "./icons/RemoveIcon";
+import { IMAGES_PATH } from "../config";
 
 interface CartProps {
   cart: CartItem[];
@@ -10,7 +11,8 @@ interface CartProps {
   onConfirmOrder: () => void;
 }
 
-const treeIcon = "src/assets/images/icon-carbon-neutral.svg";
+const treeIcon = `${IMAGES_PATH}/icon-carbon-neutral.svg`;
+const emptyCartImg = `${IMAGES_PATH}/illustration-empty-cart.svg`;
 
 const Cart = ({ cart, cartTotal, onRemoveAll, onConfirmOrder }: CartProps) => {
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
@@ -24,7 +26,7 @@ const Cart = ({ cart, cartTotal, onRemoveAll, onConfirmOrder }: CartProps) => {
         <>
           <img
             className="max-w-[128px] mx-auto"
-            src="src/assets/images/illustration-empty-cart.svg"
+            src={emptyCartImg}
             alt=""
           />
           <p className="text-center text-rose-500 font-semibold mb-4">

@@ -1,5 +1,6 @@
 import DecrementIcon from "../icons/DecrementIcon";
 import IncrementIcon from "../icons/IncrementIcon";
+import { IMAGES_PATH } from "../../config";
 
 interface ActionButtonProps {
   quantity: number;
@@ -7,7 +8,7 @@ interface ActionButtonProps {
   onRemoveFromCart: () => void;
 }
 
-const addToCartIcon = "src/assets/images/icon-add-to-cart.svg";
+const addToCartIcon = `${IMAGES_PATH}/icon-add-to-cart.svg`;
 
 const ActionButton = ({
   quantity,

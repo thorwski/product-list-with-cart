@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { CartItem } from "../pages/Desserts/Interface";
 import Button from "./Button";
+import { IMAGES_PATH } from "../config";
+import React from "react";
 
 interface OrderModalProps {
   isModalOpen: boolean;
@@ -8,6 +10,8 @@ interface OrderModalProps {
   cartItems?: CartItem[];
   cartTotal: number;
 }
+
+const orderConfirmedImg = `${IMAGES_PATH}/icon-order-confirmed.svg`;
 
 const OrderModal = ({
   isModalOpen,
@@ -80,11 +84,7 @@ const OrderModal = ({
           transform transition-transform duration-500 ease-in-out translate-y-full sm:translate-y-0 sm:duration-0 max-h-[calc(100vh-32px)] flex flex-col"
       >
         <div>
-          <img
-            className="mb-6"
-            src="src/assets/images/icon-order-confirmed.svg"
-            alt="order confirmed"
-          />
+          <img className="mb-6" src={orderConfirmedImg} alt="order confirmed" />
         </div>
         <h2 className="text-4xl font-bold text-rose-900 mb-4 pr-10">
           Order Confirmed!
@@ -92,11 +92,8 @@ const OrderModal = ({
         <p className="text-gray-600 mb-8">We hope you enjoy your food!</p>
         <ul className="bg-rose-50 p-6 flex flex-col gap-4 rounded-lg overflow-y-auto max-h-[400px] scrollbar-custom">
           {cartItems?.map((item) => (
-            <>
-              <div
-                className="flex justify-between items-center"
-                key={item.name}
-              >
+            <React.Fragment key={item.name}>
+              <div className="flex justify-between items-center">
                 <li className="flex gap-4">
                   <img
                     className="rounded-lg max-w-[60px]"
@@ -123,7 +120,7 @@ const OrderModal = ({
               </div>
 
               <hr className="border-rose-100" />
-            </>
+            </React.Fragment>
           ))}
           <div className="flex justify-between items-center py-2">
             <p className="text-rose-900 text-lg">Order Total</p>
