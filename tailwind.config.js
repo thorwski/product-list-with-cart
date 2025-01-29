@@ -15,10 +15,7 @@ export default {
           900: "hsl(14, 65%, 9%)",
         },
       },
-      fontFamily: {
-        sans: ["Red Hat Text", "sans-serif"], 
-      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };

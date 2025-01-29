@@ -1,4 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap');
+
+body {
+  background-color: hsl(20, 50%, 98%);
+  font-family: "Red Hat Text", serif;
+}
+
+.scrollbar-custom {
+  overflow-y: auto;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: hsl(20, 50%, 98%);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 10px;
+  border: 2px solid #f4f4f5;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+.scrollbar-custom::-webkit-scrollbar-button {
+  display: none;
+}
