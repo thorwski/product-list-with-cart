@@ -36,7 +36,7 @@ const Desserts = () => {
       setIsLoading(false);
       console.log(isLoading, error);
     }
-  }, []);
+  }, [error, isLoading]);
 
   useEffect(() => {
     handleFetch();
@@ -137,7 +137,7 @@ const Desserts = () => {
 
   return (
     <>
-      <div className="grid xl:grid-cols-[1fr_450px] 2xl:grid-cols-[1fr_600px] gap-8 px-4 py-6 xl:p-20">
+      <div className="grid xl:grid-cols-[1fr_400px] 2xl:grid-cols-[1fr_600px] gap-8 px-4 py-6 xl:p-20">
         <div>
           <h1 className="text-5xl text-rose-900 font-bold mb-10">Desserts</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 place-items-center gap-6">
